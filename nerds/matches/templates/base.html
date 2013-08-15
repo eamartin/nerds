@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>{% block html-title %}Nerds Reborn{% endblock %}</title>
+	{% block head-jscript %}{% endblock %}
+</head>
+<body>
+	<div id="body">
+		<div id="header"><h1>
+			<a href="{% url home %}">Nerds Reborn</a></h1>	
+			{% if user.is_authenticated %}	
+				<p>You are logged in as {{ user.get_full_name }}
+				<a href="{% url logout %}">Logout</a></p>
+			{% endif %}
+			{% block header %}{% endblock %}
+		</div>
+		{% block body %}{% endblock %}
+		<div id="footer">
+			{% block footer %}{% endblock %}
+                <br />
+                <br />
+                <br />
+                <p>I'd like to thank a few of the most excellent faculty at CP including:</p>
+                <ul>
+                  <li>Coach Gibson</li>
+                  <li>Mrs. Lowenberg</li>
+                  <li>Mr. Rippetoe</li>
+                  <li>Mr. Ullrich (retired)</li>
+                  <li>Coach O'Connor</li>
+                </ul>
+                  <p>You should thank/high five/fist bump these awesome people!</p>
+		</div>
+                <img src="http://i.imgur.com/q2qre.jpg" />
+                <p>Wow, you made it beneath the massive image. I'm looking for someone to run this website in the years after this. If you are willing and capable, please email me at eric at this domain (no nerds though).</p>
+	</div>
+</body>
+</html>

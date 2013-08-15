@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+Welcome to Nerds For Life
+<ul>
+{% if not user.is_authenticated %}
+<li><a href="{% url classic_reg %}">Register and/or sign in here</a>.</li>
+<li><a href="{% url overview %}">Check out people's classes!</a></li>
+{% else %}
+<li><a href="{% url overview %}">Check out people's classes!</a></li>
+<li><a href="{% url view_sched user_id=user.id %}">My Schedule!<a></li>
+<li><a href="{% url edit_sched %}">Edit my Schedule!</a></li>
+{% endif %}
+</ul>
+{% endblock %}
+{% block footer %}
+<a name="fb_share" type="button_count" 
+href="http://www.facebook.com/sharer.php">Share</a><script 
+src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" 
+type="text/javascript"></script>
+{% endblock %}

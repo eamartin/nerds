@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block body %}
+<h4>{{ student.get_full_name }}'s Schedule</h4>
+<ul>
+{% for cls in student.classes.all %}
+	<li><p>{{ cls.get_period_display }} Period - {{ cls.teacher }} - 
+	{% if cls.dif != "N" %}
+		{{ cls.get_dif_display }}
+	{% endif %}{{ cls.subject }}</p>
+	<ul>
+	{% for std in cls.students.values|dictsort:"first_name" %}
+		<li><a href="{% url view_sched user_id=std.id %}">{{ std.first_name }} {{ std.last_name }}</a></li>
+	{% endfor %}
+	</ul>
+	</li>
+{% endfor %}
+</ul>
+{% endblock %}
+{% block footer %}
+<a name="fb_share" type="button_count"
+href="http://www.facebook.com/sharer.php">Share</a><script
+src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"
+type="text/javascript"></script>
+{% endblock %}
+

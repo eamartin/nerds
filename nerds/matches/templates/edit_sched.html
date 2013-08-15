@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block body %}
+{% if form.errors %}
+<p>Please correct the error{{ forms.errors|pluralize }} below.</p>
+{% endif %}
+<form action="" method="post">{% csrf_token %}
+<ul>
+	<li>
+		<p>Period 1</p>
+		{{ form.class_1 }} OR IF THE CLASS ISN'T LISTED YET
+		<ul>{{ form.p_1 }}
+			<li>Teacher:{{ form.teacher_1 }}</li>
+			<li>Difficulty:{{ form.dif_1 }}</li>
+			<li>Subject:{{ form.subject_1 }}</li>
+		</ul>
+	</li>
+	<li>
+		<p>Period 2</p>
+		{{ form.class_2 }} OR IF THE CLASS ISN'T LISTED YET
+		<ul>{{ form.p_2 }}
+			<li>Teacher:{{ form.teacher_2 }}</li>
+			<li>Difficulty:{{ form.dif_2 }}</li>
+			<li>Subject:{{ form.subject_2 }}</li>
+		</ul>
+	</li>
+	<li>
+		<p>Period 3</p>
+		{{ form.class_3 }} OR IF THE CLASS ISN'T LISTED YET
+		<ul>{{ form.p_3 }}
+			<li>Teacher:{{ form.teacher_3 }}</li>
+			<li>Difficulty:{{ form.dif_3 }}</li>
+			<li>Subject:{{ form.subject_3 }}</li>
+		</ul>
+	</li>
+	<li>
+		<p>Period 4</p>
+		{{ form.class_4 }} OR IF THE CLASS ISN'T LISTED YET
+		<ul>{{ form.p_4 }}
+			<li>Teacher:{{ form.teacher_4 }}</li>
+			<li>Difficulty:{{ form.dif_4 }}</li>
+			<li>Subject:{{ form.subject_4 }}</li>
+		</ul>
+	</li>
+	<li>
+		<p>Period 5</p>
+		{{ form.class_5 }} OR IF THE CLASS ISN'T LISTED YET
+		<ul>{{ form.p_5 }}
+			<li>Teacher:{{ form.teacher_5 }}</li>
+			<li>Difficulty:{{ form.dif_5 }}</li>
+			<li>Subject:{{ form.subject_5 }}</li>
+		</ul>
+	</li>
+	<li>
+		<p>Period 6</p>
+		{{ form.class_6 }} OR IF THE CLASS ISN'T LISTED YET
+		<ul>{{ form.p_6 }}
+			<li>Teacher:{{ form.teacher_6 }}</li>
+			<li>Difficulty:{{ form.dif_6 }}</li>
+			<li>Subject:{{ form.subject_6 }}</li>
+		</ul>
+	</li>
+	<li>
+		<p>Period 7</p>
+		{{ form.class_7 }} OR IF THE CLASS ISN'T LISTED YET
+		<ul>{{ form.p_7 }}
+			<li>Teacher:{{ form.teacher_7 }}</li>
+			<li>Difficulty:{{ form.dif_7 }}</li>
+			<li>Subject:{{ form.subject_7 }}</li>
+		</ul>
+	</li>
+</ul>
+<input type="submit" value="Submit">
+</form>
+{% endblock %}
