@@ -74,7 +74,6 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'nerds.urls'
 
-
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -82,6 +81,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
-    'matches',
+    'nerds.matches',
     'gunicorn'
 )
